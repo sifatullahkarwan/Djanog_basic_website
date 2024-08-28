@@ -1,0 +1,26 @@
+1-  Your models in app(s): 'base' have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+
+1-Answer => python manage.py makemigrations
+
+
+2- You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+2- Answer => python manage.py migrations and python manage.py migrate
+
+3-ERRORS:
+base.Room: (models.E015) 'ordering' refers to the nonexistent field, related field, or lookup 'updated'.
+in class Meta:
+         ordering = ['-updated','-created']
+
+3-solution: first soure that 'updated, and created should match to your parent class field
+th match value is
+ ordering = ['-update','-created']
+
+
+ 4-     return super().execute(query, params)
+django.db.utils.OperationalError: no such column: base_room.updated
+
+4 - solution : python manage.py makemigrations
+python manage.py migrate

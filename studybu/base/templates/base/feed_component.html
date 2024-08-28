@@ -1,0 +1,17 @@
+<div>
+{% for room in rooms %}<!--n Django templates, you can perform programming logic like executing if statements and for loops.
+
+-->
+    <div>
+        {% if request.user == room.host %}
+        <a href="{% url 'update-room' room.id %}">Edit</a>
+        <a href="{% url 'delete-room' room.id %}">Delete</a>
+        {%endif%}
+        
+        <a href = "{% url 'usre-profile' room.host.id %}">@{{ room.host.username}}</a>
+        <h5>{{room.id}}-- <a href="{% url 'room' room.id %}"><!--it let us to go to room page according id-->{{room.name}}</h5></a>
+        <hr>
+        <small>{{room.topic.name}}</small>
+     </div>
+{% endfor %}
+</div>

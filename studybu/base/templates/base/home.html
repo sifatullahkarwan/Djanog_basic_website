@@ -1,0 +1,36 @@
+{% extends 'main.html' %}<!--inhirate tag-->
+
+{% block content %}
+
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr ;/*The grid-template-columns property specifies the number (and the widths) of columns in a grid layout.*/
+    }
+</style>
+ 
+
+<!-- center -->
+<div class= " home-container">
+    
+    <!-- center -->
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        {% include 'base/topic_component.html'%}
+    </div>
+
+    <!-- right -->
+    <div>
+        <a href="{% url 'create-room' %}">Create Room</a><!--{% url 'create-room' %} is django tag and it take creat_room function and link with this tag in browser-->
+       
+            {% include 'base/feed_component.html' %}
+       
+    </div>
+ 
+    <!-- left -->
+    <div>
+        {% include 'base/activity_componant.html'%}
+    </div>
+    
+</div>
+{% endblock content %}

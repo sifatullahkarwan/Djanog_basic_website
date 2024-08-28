@@ -1,0 +1,12 @@
+Render means you are collecting some information through a data set
+Redirect means you are sending someone to a particular position
+
+what is HTTP?
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+Python functions that takes http requests and returns http response, like HTML documents.
+
+HTTP protocols:
+1-POST: POST is used to send data to a server to create/update a resource.
+ POST request adds a new resource to the server
+
+2-GET: GET is used to request data from a specified resource.
